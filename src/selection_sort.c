@@ -1,7 +1,4 @@
-#include <unistd.h>
-#include <stdlib.h>
-
-typedef int Item;
+#include "../sorting.h"
 
 void swap(int *x, int *y)
 {
@@ -26,19 +23,6 @@ void selection(Item *v, int n)
 		if (min_value != i)
 			swap(&v[min_value], &v[i]);
 	}
-}
-
-void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-size_t ft_str_len(char *str)
-{
-	int i = 0;
-	while (str[i] != '\0')
-		i++;
-	return i;
 }
 
 void init_list(char **str, int argc)
@@ -85,14 +69,3 @@ void ft_print(char **str)
 		i++;
 	}
 }
-
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		init_list(argv, argc);
-		ft_putchar('\n');
-	}
-	return 0;
-}
-
